@@ -9,7 +9,7 @@ import {Message} from './models/Message';
 })
 export class SpringService {
 
-  url = 'http://localhost:8080/api/v1/messages';
+  url = 'http://localhost:3000/messages';
 
   constructor(private httpClient: HttpClient) { }
 

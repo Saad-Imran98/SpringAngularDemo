@@ -4,11 +4,13 @@ import {HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { Component2Component } from './component2/component2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorldComponent
+    HelloWorldComponent,
+    Component2Component
   ],
   imports: [
     BrowserModule,

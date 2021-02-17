@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {SpringService} from '../spring.service';
-import {Observable} from 'rxjs';
-import {Message} from '../models/Message';
+import {Menu} from "../../models/Menu";
+import {MenuService} from "../menu.service";
 
 @Component({
   selector: 'app-hello-world',
@@ -10,13 +9,15 @@ import {Message} from '../models/Message';
 })
 export class HelloWorldComponent implements OnInit {
 
-  constructor(private springService: SpringService) { }
+  constructor(private menuService: MenuService) { }
 
-  messages: Message[] = [];
+  menus: Menu[] = [];
 
   ngOnInit(): void {
-    this.springService.getMessage().subscribe(data => {
-      this.messages = data;
+    this.menuService.getAllUpdatedMenus();
+    this.menuService.menus.subscribe((menu) => {
+      this.menus = menu;
+      console.log(menu);
     });
   }
 
